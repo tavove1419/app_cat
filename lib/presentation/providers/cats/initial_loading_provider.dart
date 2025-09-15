@@ -5,6 +5,6 @@ final initialLoadingProvider = Provider<bool>((ref) {
 
   final step1 = ref.watch(getCatBreendsProvider).isEmpty;
 
-  return step1 ? true : false;
+  return  step1 ? true : false;
   
 });

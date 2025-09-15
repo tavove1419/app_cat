@@ -5,8 +5,14 @@ import 'package:go_router/go_router.dart';
 import 'package:app_test_movil/presentation/screens/screens.dart';
 
 final appRouter = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/splash',
   routes: [
+    GoRoute(
+      path: '/splash',
+      name: SplashCats.name,
+      builder: (context, state) => SplashCats()
+    ),
+
     GoRoute(
       path: '/',
       name: LandingScreen.name,

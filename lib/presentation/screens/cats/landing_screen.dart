@@ -31,7 +31,6 @@ class _LandingViewState extends ConsumerState<_LandingView> {
   @override
   void initState() {
     super.initState();
-
     ref.read(getCatBreendsProvider.notifier).loadNextPage();
   }
 
@@ -43,8 +42,6 @@ class _LandingViewState extends ConsumerState<_LandingView> {
     if (initialLoading) return FullScreen();
 
     final getCatBreends = ref.watch(getCatBreendsProvider);
-
-    if(getCatBreends.isEmpty) return Center(child: CircularProgressIndicator());
 
     return SafeArea(
       child: Padding(

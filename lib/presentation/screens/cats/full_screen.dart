@@ -9,9 +9,7 @@ class FullScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Catsbreeds', style: TextStyle(color: Colors.blueAccent),),
-          SizedBox(height: 10),
-          CircularProgressIndicator(strokeWidth: 2,)
+          CircularProgressIndicator(strokeWidth: 5)
         ],
       ),
     );
