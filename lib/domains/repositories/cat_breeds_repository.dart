@@ -4,4 +4,5 @@ abstract class CatBreedsRepository {
 
   Future<List<CatBreeds>> getCatBreeds({int limit = 10, int page = 0});
   
+  Future<List<CatBreeds>> searchCatBreeds(String name);
 }

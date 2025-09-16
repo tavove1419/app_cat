@@ -24,7 +24,21 @@ class CatBreedsApiDatasources extends CatBreedsDatasource {
         'page': page
       }
     );
-    final List<dynamic> dataResponse =  response.data;
+    final List<dynamic> dataResponse = response.data;
+    final List<CatBreedsResponse> catBreendsResponse = dataResponse.map(
+      (cat) => CatBreedsResponse.fromJson(cat)).toList();
+    final List<CatBreeds> catsList = CatBreedsMapper.catBreedListToEntity(catBreendsResponse);
+    return catsList;
+  }
+
+  @override
+  Future<List<CatBreeds>> searchCatBreeds(String name) async {
+    final response = await dio.get('/breeds/search',
+      queryParameters: {
+        'q': name
+      }
+    );
+    final List<dynamic> dataResponse = response.data;
     final List<CatBreedsResponse> catBreendsResponse = dataResponse.map(
       (cat) => CatBreedsResponse.fromJson(cat)).toList();
     final List<CatBreeds> catsList = CatBreedsMapper.catBreedListToEntity(catBreendsResponse);

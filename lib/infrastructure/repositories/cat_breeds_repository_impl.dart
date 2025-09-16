@@ -17,4 +17,12 @@ class CatBreedsRepositoryImpl extends CatBreedsRepository {
     }
   }
   
+  @override
+  Future<List<CatBreeds>> searchCatBreeds(String name) {
+    try {
+      return datasource.searchCatBreeds(name);
+    } catch (e) {
+      throw UnimplementedError(e.toString());
+    }
+  }
 }
